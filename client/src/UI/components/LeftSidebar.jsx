@@ -10,7 +10,7 @@ import VoiceControl from "../accessories/VoiceControl";
 const LeftSidebar = ({ setIsScanning }) => {
   const { selected_source } = useSelector((store) => store.audio_src);
   return (
-    <div className=" QPushButton h-[680px] w-[29%]">
+    <div className=" QPushButton h-[640px] w-[25%]">
       <div className="  text-white py-4 ">
         <CheckBoxSwitch />
         <NoisyEnv />

@@ -8,7 +8,7 @@ const SaveUnSave = () => {
 
   const iconStyle = { color: isClicked ? "white" : "#d61102" };
   return (
-    <div className="w-[250px] h-[50px] mx-auto mt-4 flex items-center justify-center gap-4 QPushButton">
+    <div className="w-[230px] h-[50px] mx-auto mt-4 flex items-center justify-center gap-4 QPushButton">
       <div className="buttons">
         <label>
           <input type="checkbox" name="check" onChange={toggleSwitch} />

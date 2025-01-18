@@ -21,6 +21,7 @@ button {
 button:disabled {
   cursor: not-allowed;
 }
+
 .header {
   -webkit-app-region: drag;
   border-bottom: 3px inset rgba(0, 0, 0, 0.2);

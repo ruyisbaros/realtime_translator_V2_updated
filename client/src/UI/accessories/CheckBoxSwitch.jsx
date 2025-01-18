@@ -15,7 +15,7 @@ const CheckBoxSwitch = () => {
     });
   };
   return (
-    <div className=" QPushButton w-[250px] h-[50px] mx-auto flex items-center justify-center mt-4">
+    <div className=" QPushButton w-[230px] h-[50px] mx-auto flex items-center justify-center mt-4">
       {isClicked ? (
         <img
           src="/assets/mic_off.svg"

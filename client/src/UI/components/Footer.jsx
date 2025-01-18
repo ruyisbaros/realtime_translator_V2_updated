@@ -1,6 +1,8 @@
 const Footer = () => {
   return (
-    <div className="text-center text-white h-full border_thin_f">Footer</div>
+    <footer className="w-full h-[30px] bg-primary_d text-white flex items-center justify-center">
+      <p>&copy; 2025 Beyond Language API</p>
+    </footer>
   );
 };
 

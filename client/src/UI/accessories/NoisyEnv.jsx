@@ -4,7 +4,7 @@ const NoisyEnv = () => {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <div className="flex items-center justify-center mt-4">
+    <div className="flex items-center justify-center mt-4 w-[230px] mx-auto">
       <div className="checkbox-container ">
         <input
           type="checkbox"

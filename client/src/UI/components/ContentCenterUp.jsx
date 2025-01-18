@@ -74,7 +74,7 @@ const ContentCenterUp = ({ isScanning, setIsScanning }) => {
   };
 
   return (
-    <div className="QPushButton max-w-[95%] mx-auto min-h-[40%] py-6 mt-2">
+    <div className="QPushButton max-w-[95%] mx-auto min-h-[38%] mt-2">
       <div className="source-options">
         <button
           className={`QPushButton block mx-auto mt-4 w-[220px] h-[60px] ${
@@ -94,30 +94,32 @@ const ContentCenterUp = ({ isScanning, setIsScanning }) => {
       </div>
 
       {isScanning ? (
-        <div className="source-list-container max-w-[90%]">
-          <ul className="source-list">
-            {audio_channels.length >= 1 ? (
-              audio_channels.map((source, index) => (
-                <li
-                  className="cursor-pointer"
-                  key={index}
-                  onClick={() => handleSourceSelect(source)}
-                >
-                  {source.mediaName || source.name}
-                </li>
-              ))
-            ) : (
-              <p className="text-center text-[#d61102] mt-4 font-bold">
-                No audio sources detected.
-              </p>
+        <div className="pb-2">
+          <div className="source-list-container ">
+            <ul className="source-list">
+              {audio_channels.length >= 1 ? (
+                audio_channels.map((source, index) => (
+                  <li
+                    className="cursor-pointer"
+                    key={index}
+                    onClick={() => handleSourceSelect(source)}
+                  >
+                    {source.mediaName || source.name}
+                  </li>
+                ))
+              ) : (
+                <p className="text-center text-[#d61102] mt-4 font-bold">
+                  No audio sources detected.
+                </p>
+              )}
+            </ul>
+            {selected_source && (
+              <p>Selected Source: {selected_source?.mediaName}</p>
             )}
-          </ul>
-          {selected_source && (
-            <p>Selected Source: {selected_source?.mediaName}</p>
-          )}
+          </div>
         </div>
       ) : (
-        <div className="w-[90%] m-auto h-[160px]">
+        <div className="w-[88%] m-auto h-[150px] pb-2">
           <img
             src="/assets/AI-1.jpeg"
             alt="AI-1.jpeg"

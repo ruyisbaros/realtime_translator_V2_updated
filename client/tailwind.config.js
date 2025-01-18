@@ -4,6 +4,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      width: {
+        electron: "1000px", // Add a custom class for Electron-specific dimensions
+      },
+      height: {
+        electron: "800px", // Add a custom class for Electron-specific dimensions
+      },
       colors: {
         p1: "#2EF2FF",
         p2: "#3C52D9",
@@ -23,6 +29,7 @@ export default {
         primary_d: "#020817",
         grayy: "#3a3f4c",
         the_black: "#0f1015",
+        primary_hex: "#031649",
         blue: {
           50: "#E0F2FE", // Light Ice Blue
           100: "#93C5FD", // Sky Blue

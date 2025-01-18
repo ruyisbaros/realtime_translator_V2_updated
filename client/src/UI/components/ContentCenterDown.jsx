@@ -54,7 +54,7 @@ const ContentCenterDown = () => {
   return (
     <div className="translation-output-container h-[57%] QPushButton max-w-[95%] m-auto mt-2">
       <div
-        className="translation-output-area my-auto mt-[30px] overflow-auto" // Enable scrolling if content overflows
+        className="translation-output-area  mt-[10px] overflow-auto" // Enable scrolling if content overflows
         ref={outputAreaRef}
       >
         <div className="translation-output-content">

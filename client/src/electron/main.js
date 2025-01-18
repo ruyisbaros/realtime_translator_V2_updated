@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Tray, Menu, ipcMain } from "electron";
+import { app, BrowserWindow, Tray, Menu, ipcMain, screen } from "electron";
 import path from "path";
 import url from "url";
 import process from "process";
@@ -14,6 +14,7 @@ let mainWindow;
 let overlayWindow;
 let tray;
 let audioStreamProcess = null;
+
 const isDev = !app.isPackaged; // Check if the app is running in development
 const trayIconPath = isDev
   ? path.join(app.getAppPath(), "public/assets/logo_3_20.png") // Development
@@ -37,9 +38,10 @@ function getSubtitlePath() {
 
 /* CREATE MAIN WINDOW */
 function createWindow() {
+  const { width, height } = screen.getPrimaryDisplay().workAreaSize;
   mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 800,
+    width: Math.min(1200, width),
+    height: Math.min(800, height),
     minWidth: 800,
     minHeight: 600,
     frame: false,

@@ -17,8 +17,8 @@ const VoiceControl = () => {
     background: `linear-gradient(to right, hsl(224, 48%, 36%) ${sliderValue}%, rgb(214,214,214) ${sliderValue}%)`,
   };
   return (
-    <div className="h-[50px] w-[250px] flex items-center justify-center mx-auto mt-4 QPushButton">
-      <div className="slide_container flex items-center gap-1 px-3">
+    <div className="h-[50px] w-[230px] flex items-center justify-center mx-auto mt-4 QPushButton">
+      <div className="slide_container flex items-center gap-2 px-3">
         {sliderValue <= 0 ? (
           <img
             src="/assets/voice_stop.svg"
@@ -41,7 +41,7 @@ const VoiceControl = () => {
           max={99}
           value={sliderValue} // Bind value to state
           onChange={handleChange} // Handle changes
-          className="voice_slider w-[200px] cursor-grabbing h-[10px]"
+          className="voice_slider w-[170px] cursor-grabbing h-[10px]"
           style={sliderStyle} // Apply gradient style to slider
         />
         <p className="val_p text-[11px] font-bold">{sliderValue}%</p>

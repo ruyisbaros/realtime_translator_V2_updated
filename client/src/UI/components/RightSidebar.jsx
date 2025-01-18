@@ -6,7 +6,7 @@ const RightSidebar = () => {
   console.log(same_language_warning);
   return (
     <div className="bg-primary rounded-[10px] w-[29%]">
-      <div className="w-full  h-[680px] rounded-[5px] text-white QPushButton">
+      <div className="w-full  h-[640px] rounded-[5px] text-white QPushButton">
         <div className="w-full h-[230px] p-2">
           <img
             src="/assets/jarvis.gif"

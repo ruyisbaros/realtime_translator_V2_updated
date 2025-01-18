@@ -7,7 +7,7 @@ const Header = () => {
     setDropdownOpen((prev) => !prev);
   };
   return (
-    <header className="header flex items-center justify-between bg-primary p-4 text-white">
+    <header className="header flex items-center justify-between bg-primary p-4 text-white mt-[-25px]">
       {/* Left: Logo and Title */}
       <div className="flex items-center space-x-3">
         <img
@@ -16,7 +16,12 @@ const Header = () => {
           className="h-10 w-10 rounded-full cursor-pointer"
           style={{ WebkitAppRegion: "no-drag" }}
         />
-        <h1 className="text-xl font-orbitron">Beyond Language</h1>
+        <div>
+          <h1 className="text-[22px] font-orbitron">Beyond Language</h1>
+          <p className="text-[12px] italic font-bold text-[#ececec]">
+            Breaking barriers, one word at a time...
+          </p>
+        </div>
       </div>
 
       {/* Right: Profile and Window Controls */}
@@ -26,7 +31,7 @@ const Header = () => {
           <img
             src="/assets/prof_1.jpg"
             alt="Profile"
-            className="h-9 w-9 rounded-full cursor-pointer"
+            className="h-10 w-10 rounded-full cursor-pointer"
             onClick={toggleDropdown}
             style={{ WebkitAppRegion: "no-drag" }}
           />

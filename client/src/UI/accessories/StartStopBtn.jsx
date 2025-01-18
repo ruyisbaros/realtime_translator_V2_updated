@@ -48,7 +48,7 @@ const StartStopBtn = ({ setIsScanning }) => {
 
   return (
     <div
-      className={`w-[250px] h-[50px] mx-auto flex items-center justify-center mt-4 relative gap-3`}
+      className={`w-[230px] h-[50px] mx-auto flex items-center justify-center mt-4 relative gap-3`}
     >
       <button
         className={`translationButton ${

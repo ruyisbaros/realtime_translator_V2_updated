@@ -5,8 +5,8 @@ const SourceLanguage = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="QPushButton mt-4 p-3 w-[250px] h-[120px] flex items-center justify-center mx-auto">
-      <div className="language-selector w-[200px]">
+    <div className="QPushButton mt-4 p-3 w-[230px] h-[120px] flex items-center justify-center mx-auto">
+      <div className="language-selector w-[190px]">
         <label htmlFor="source-language" className="text-[14px] p-1">
           Source Language:
         </label>
