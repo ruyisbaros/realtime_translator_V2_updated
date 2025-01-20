@@ -67,10 +67,26 @@ function createWindow() {
     console.log(`Loading file: ${fileUrl}`);
     mainWindow.loadURL(fileUrl);
   }
+  mainWindow.webContents.session.webRequest.onBeforeSendHeaders(
+    (details, callback) => {
+      callback({ requestHeaders: { Origin: "*", ...details.requestHeaders } });
+    }
+  );
 
+  mainWindow.webContents.session.webRequest.onHeadersReceived(
+    (details, callback) => {
+      callback({
+        responseHeaders: {
+          "Access-Control-Allow-Origin": ["*"],
+          ...details.responseHeaders,
+        },
+      });
+    }
+  );
   createTray();
   createOverlay();
 }
+
 /* CREATE TRAY */
 function createTray() {
   tray = new Tray(trayIconPath); // Replace with your icon

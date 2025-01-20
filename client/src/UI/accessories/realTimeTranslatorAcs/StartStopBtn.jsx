@@ -4,7 +4,7 @@ import {
   setSelectedSourceRdx,
   setSourceLanguageRdx,
   setTargetLanguageRdx,
-} from "../redux/selectedAudioSrc";
+} from "../../redux/selectedAudioSrc";
 import "./styles.css";
 import { toast } from "react-toastify";
 import ConfirmationModal from "./ConfirmationModal";

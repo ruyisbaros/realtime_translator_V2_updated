@@ -1,11 +1,26 @@
 from fastapi import FastAPI
 from dependencies.model_loaders import load_whisper_model, load_facebook_m2m100_local
 from dependencies.socket_events import setup_socket_events, shutdown_socket, shutdown_processes
-# from dependencies.state_manager import StateManager
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.routing import APIRoute
 from asyncio import Lock
+from routers import uploadVideos
 
 # Initialize FastAPI app
 app = FastAPI()
+origins = [
+    "http://localhost",
+    "https://localhost:5123"
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+# CORSMiddleware
+
 
 # state_manager = StateManager()
 whisper_model = None  # Whisper model instance
@@ -72,4 +87,5 @@ async def lifespan(app: FastAPI):
 # Pass the lifespan to the FastAPI app
 app = FastAPI(lifespan=lifespan)
 
-""" will ask this: Audio streaming already in progress. Stop it first. """
+
+app.include_router(uploadVideos.router)

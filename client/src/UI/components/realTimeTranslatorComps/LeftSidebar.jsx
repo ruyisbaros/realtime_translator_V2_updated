@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import CheckBoxSwitch from "../accessories/CheckBoxSwitch";
-import NoisyEnv from "../accessories/NoisyEnv";
-import SaveUnSave from "../accessories/SaveUnSave";
-import SourceLanguage from "../accessories/SourceLanguage";
-import StartStopBtn from "../accessories/StartStopBtn";
-import TargetLanguage from "../accessories/TargetLanguage";
-import VoiceControl from "../accessories/VoiceControl";
+import CheckBoxSwitch from "../../accessories/realTimeTranslatorAcs/CheckBoxSwitch";
+import NoisyEnv from "../../accessories/realTimeTranslatorAcs/NoisyEnv";
+import SaveUnSave from "../../accessories/realTimeTranslatorAcs/SaveUnSave";
+import SourceLanguage from "../../accessories/realTimeTranslatorAcs/SourceLanguage";
+import StartStopBtn from "../../accessories/realTimeTranslatorAcs/StartStopBtn";
+import TargetLanguage from "../../accessories/realTimeTranslatorAcs/TargetLanguage";
+import VoiceControl from "../../accessories/realTimeTranslatorAcs/VoiceControl";
 // eslint-disable-next-line react/prop-types
 const LeftSidebar = ({ setIsScanning }) => {
   const { selected_source } = useSelector((store) => store.audio_src);

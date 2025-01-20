@@ -1,6 +1,8 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -11,9 +13,16 @@ import MainSidebar from "./components/MainSidebar";
 
 const App = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
+  const location = useLocation();
 
   const toggleSidebar = () => {
     setIsSidebarExpanded((prev) => !prev);
+  };
+
+  const pageVariants = {
+    initial: { opacity: 0, y: 100 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -100 },
   };
   return (
     <div className="w-[1200px] max-h-[800px] bg-primary_d shadow-lg rounded-2xl overflow-hidden">
@@ -34,17 +43,52 @@ const App = () => {
         />
 
         <div className="flex-grow overflow-hidden">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/realtime-translator"
-              element={<RealtimeTranslator />}
-            />
-            <Route
-              path="/video-subtitle-creator"
-              element={<VideoSubtitleCreator />}
-            />
-          </Routes>
+          <AnimatePresence>
+            <Routes location={location} key={location.key}>
+              <Route
+                path="/"
+                element={
+                  <motion.div
+                    variants={pageVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Home />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/realtime-translator"
+                element={
+                  <motion.div
+                    variants={pageVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={{ duration: 0.5 }}
+                  >
+                    <RealtimeTranslator />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/video-subtitle-creator"
+                element={
+                  <motion.div
+                    variants={pageVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={{ duration: 0.5 }}
+                  >
+                    <VideoSubtitleCreator />
+                  </motion.div>
+                }
+              />
+            </Routes>
+          </AnimatePresence>
         </div>
       </div>
       <Footer />

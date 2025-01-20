@@ -5,8 +5,8 @@ import {
   setAudioChannelsRdx,
   setIsLoadingRdx,
   setSelectedSourceRdx,
-} from "../redux/selectedAudioSrc";
-import { useWebSocket } from "../WebSocketContext";
+} from "../../redux/selectedAudioSrc";
+import { useWebSocket } from "../../WebSocketContext";
 import { toast } from "react-toastify";
 // eslint-disable-next-line react/prop-types
 const ContentCenterUp = ({ isScanning, setIsScanning }) => {

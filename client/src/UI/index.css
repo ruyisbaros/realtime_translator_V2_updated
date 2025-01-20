@@ -86,7 +86,11 @@ button:disabled {
 .waiting-text {
   animation: fade 2s infinite;
 }
-
+/* ///Move subtitle format span//// */
+.move_span {
+  display: inline-block;
+  transform: translateX(20px);
+}
 @keyframes fade {
   0%,
   100% {

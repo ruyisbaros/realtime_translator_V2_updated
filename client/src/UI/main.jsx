@@ -10,8 +10,8 @@ const setDynamicCSP = () => {
   const isDevelopment = import.meta.env.MODE === "development";
 
   const csp = isDevelopment
-    ? "default-src 'self'; connect-src 'self' http://localhost:8000 ws://localhost:9001; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self';"
-    : "default-src 'self'; connect-src 'self' wss://deployed_domain.com; style-src 'self'; script-src 'self'; img-src 'self' data:; font-src 'self';";
+    ? "default-src 'self'; connect-src 'self' http://localhost:8000 http://localhost:9001 https://cors-anywhere.herokuapp.com/ ws://localhost:9001; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self';"
+    : "default-src 'self'; connect-src 'self' https://deployed_domain.com ws://localhost:9001; style-src 'self'; script-src 'self'; img-src 'self' data:; font-src 'self';";
 
   const metaCSP = document.createElement("meta");
   metaCSP.httpEquiv = "Content-Security-Policy";

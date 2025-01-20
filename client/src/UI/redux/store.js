@@ -1,12 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import currentUserSlice from "./currentUserSlice";
-import videoSlice from "./videoPlayerSlicer";
+
 import selectedAudioSrc from "./selectedAudioSrc";
+import videoSubtitleSlice from "./videoSubtitleSlice";
 
 export const store = configureStore({
   reducer: {
     currentUser: currentUserSlice,
-    video: videoSlice,
     audio_src: selectedAudioSrc,
+    video_subtitles: videoSubtitleSlice,
   },
 });

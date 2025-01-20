@@ -25,7 +25,7 @@ const VideoPlayer = () => {
 
     // Get video and video container positions
     const videoRect = video.getBoundingClientRect();
-    const videoParentRect = video.parentElement.getBoundingClientRect();
+    //const videoParentRect = video.parentElement.getBoundingClientRect();
 
     // Calculate position and dimensions
     const newSubTitlePosition = {

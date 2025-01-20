@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setTargetLanguageRdx } from "../redux/selectedAudioSrc";
+import { setTargetLanguageRdx } from "../../redux/selectedAudioSrc";
 
 const TargetLanguage = () => {
   const dispatch = useDispatch();

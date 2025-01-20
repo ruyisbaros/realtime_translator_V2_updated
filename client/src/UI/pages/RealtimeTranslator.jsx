@@ -1,8 +1,8 @@
 import { useState } from "react";
-import ContentCenter from "../components/ContentCenter";
+import ContentCenter from "../components/realTimeTranslatorComps/ContentCenter";
 
-import LeftSidebar from "../components/LeftSidebar";
-import RightSidebar from "../components/RightSidebar";
+import LeftSidebar from "../components/realTimeTranslatorComps/LeftSidebar";
+import RightSidebar from "../components/realTimeTranslatorComps/RightSidebar";
 
 const TheCenterContent = () => {
   const [isScanning, setIsScanning] = useState(false);
